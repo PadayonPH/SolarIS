@@ -5,3 +5,16 @@
   right: 0;
   width: 100%;
 }
+
+
+.geocoder-control{
+	position: fixed;
+	top: 0.25%;
+	right: 40%;
+	float: clear;
+	width:400px;
+}
+
+.easy-button-button{
+	padding:0px;
+}

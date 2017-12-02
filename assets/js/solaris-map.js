@@ -38,6 +38,31 @@ var map = L.map('map', {
     layers: [google, solar_ann, drawn_feature]
 });
 
+// GEOCODE SEARCH
+var arcgisOnline = L.esri.Geocoding.arcgisOnlineProvider({
+    countries: 'PHL'
+});
+
+var searchControl = L.esri.Geocoding.geosearch({
+    providers: [
+        arcgisOnline,
+        L.esri.Geocoding.featureLayerProvider({
+            url: 'https://services.arcgis.com/uCXeTVveQzP4IIcx/arcgis/rest/services/gisday/FeatureServer/0/',
+            bufferRadius: 5000
+        })
+    ],
+    expanded: true,
+    position: 'topright',
+    collapseAfterResult: false
+}).addTo(map);
+
+var results = L.layerGroup().addTo(map);
+
+searchControl.on('results', function(data){
+    results.clearLayers();
+});
+
+
 L.control.layers(basemaps, overlaymaps, {collapsed: false}).addTo(map);
 L.control.scale({position:'bottomright', maxWidth:100}).addTo(map);
 
@@ -47,7 +72,7 @@ L.control.scale({position:'bottomright', maxWidth:100}).addTo(map);
 // EASYBUTTON ZOOM TO EXTENT
 L.easyButton({
     states: [{
-        icon: 'fa-globe',
+        icon: 'fa-globe fa-lg',
         onClick: function(){
             map.setView([14.56, 120.05], 11);},
         title: 'Zoom to Extent'
@@ -71,7 +96,16 @@ var draw_control = new L.Control.Draw({
     draw: {
         polygon: {
             allowIntersection: false,
-            showArea: true
+            showArea: true,
+             shapeOptions: {
+                    clickable: false,
+                    color:"#2196F3",
+                    weight:1,
+                    opacity: 1,
+                    fillColor:"#FFEE58",
+                    fillOpacity:0.4,
+                    dashArray:"3,3"
+                }
         },
         polyline: false,
         rectangle: false,
@@ -116,7 +150,7 @@ map.on(L.Draw.Event.EDITED, function(event) {
 // EASYBUTTON CALCULATE
 L.easyButton({
     states: [{
-        icon: 'fa-sun-o',
+        icon: 'fa-sun-o fa-lg',
         onClick: function (){
             // map.setView([14.56, 120.05], 11)
             var drawn_features = drawn_feature.getLayers();
@@ -151,30 +185,31 @@ L.easyButton({
     }]
 }).addTo(map);
 
-// GEOCODE SEARCH
-var arcgisOnline = L.esri.Geocoding.arcgisOnlineProvider({
-    countries: 'PHL'
-});
-
-var searchControl = L.esri.Geocoding.geosearch({
-    providers: [
-        arcgisOnline,
-        L.esri.Geocoding.featureLayerProvider({
-            url: 'https://services.arcgis.com/uCXeTVveQzP4IIcx/arcgis/rest/services/gisday/FeatureServer/0/',
-            bufferRadius: 5000
-        })
-    ],
-    expanded: false,
-    position: 'topright',
-    collapseAfterResult: true
-}).addTo(map);
-
-var results = L.layerGroup().addTo(map);
-
-searchControl.on('results', function(data){
-    results.clearLayers();
-});
-
 function initToggle(){
     window.toggle = false;
 };
+
+
+// 'name container'
+name_container = L.control();
+
+name_container.onAdd = function(map) {
+    var container = L.DomUtil.create('div', 'name_container');
+    container.id="name_container";
+
+    container.innerHTML = '<div class="panel panel-default"><div class="panel-body"><h4>GoSolar</h4></div></div>';
+
+    L.DomEvent.on(container, 'mouseover', function (ev) {
+       map.dragging.disable();
+    });
+
+    L.DomEvent.on(container, 'mouseout', function (ev) {
+        map.dragging.enable();
+    });
+
+    return container;
+    
+};
+
+name_container.setPosition('bottomleft');
+name_container.addTo(map);
