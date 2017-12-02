@@ -14,7 +14,7 @@ from .models import Devices
 class ComputePower(APIView):
     def get(self, request, format=None):
         try:
-            footprint = json.loads(request.data['house_footprint'])
+            footprint = json.loads(request.query_params.get('house_footprint'))
             power_value,eff_area = extract_area_power(footprint)
             message = {'details': 'has input footprint', "power_value": power_value, "area": eff_area}
         except Exception:

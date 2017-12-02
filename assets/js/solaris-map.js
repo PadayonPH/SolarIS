@@ -121,9 +121,27 @@ L.easyButton({
             // map.setView([14.56, 120.05], 11)
             var drawn_features = drawn_feature.getLayers();
             if(drawn_features.length == 1) {
+                console.log(drawn_features[0].toGeoJSON())
+                var geojson_tmpl = {};
+                geojson_tmpl['type'] = "FeatureCollection";
+                geojson_tmpl['features'] = [];
                 var coords = drawn_features[0].toGeoJSON()['geometry']['coordinates'][0];
-                // console.log(JSON.stringify(drawn_features[0].toGeoJSON()));
-                console.log(JSON.stringify(coords));
+                geojson_tmpl['features'].push(drawn_features[0].toGeoJSON());
+                console.log(geojson_tmpl);
+                var get_data = {"house_footprint": JSON.stringify(geojson_tmpl)}
+                $.ajax({
+                    // url: "http://api.solar.padayon.ph/compute/",
+                    url: "http://127.0.0.1:8888/compute/",                    
+                    data: get_data,
+                    cache: false,
+                    type: "GET",
+                    success: function(response) {
+                        console.log(response);
+                    },
+                    error: function(xhr) {
+                
+                    }
+                });
             }
             ;},
         title: 'GoSOLAR'
