@@ -83,19 +83,35 @@ var draw_control = new L.Control.Draw({
 
 map.addControl(draw_control);
 
-// map.on(L.Draw.Event.CREATED, function (event) {
-//     var layer = event.layer;
-//
-//     drawn_feature.addLayer(layer);
-// });
+var getPopupContent = function (layer) {
+    var latlngs = layer._defaultShape ? layer._defaultShape() : layer.getLatLngs();
+    var area = L.GeometryUtil.geodesicArea(latlngs);
+    return "Area: "+L.GeometryUtil.readableArea(area, true);
+};
 
 map.on(L.Draw.Event.CREATED, function (event) {
     var layer = event.layer;
-
     console.log(JSON.stringify(layer.toGeoJSON()));
+
+    var content = getPopupContent(layer);
+    if (content != null) {
+        layer.bindPopup(content);
+    }
 
     drawn_feature.addLayer(layer);
 });
+
+map.on(L.Draw.Event.EDITED, function(event) {
+    var layers = event.layers,
+        content = null;
+    layers.eachLayer(function(layer) {
+        content = getPopupContent(layer);
+        if (content !== null) {
+            layer.setPopupContent(content);
+        }
+    });
+});
+
 
 // EASYBUTTON CALCULATE
 L.easyButton({
