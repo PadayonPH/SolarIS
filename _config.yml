@@ -1,0 +1,22 @@
+# Site Settings
+title: bnhr
+description: FOSS, Geospatial, Python, Basketball, and Everything in Between
+author:
+  facebook: benhur07b
+  twitter: benhur07b
+baseurl: ""
+logo: /media/logo.png
+
+# Build Settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Exclude
+exclude:
+  - Gemfile
+  - Gemfile.lock
+
+plugins:
+  - github-pages
