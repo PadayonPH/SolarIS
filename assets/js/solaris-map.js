@@ -127,16 +127,19 @@ L.easyButton({
                 geojson_tmpl['features'] = [];
                 var coords = drawn_features[0].toGeoJSON()['geometry']['coordinates'][0];
                 geojson_tmpl['features'].push(drawn_features[0].toGeoJSON());
-                console.log(geojson_tmpl);
+                // console.log(geojson_tmpl);
                 var get_data = {"house_footprint": JSON.stringify(geojson_tmpl)}
                 $.ajax({
-                    // url: "http://api.solar.padayon.ph/compute/",
-                    url: "http://127.0.0.1:8888/compute/",                    
+                    url: "http://api.solar.padayon.ph/compute/",
+                    // url: "http://127.0.0.1:8888/compute/",                    
                     data: get_data,
                     cache: false,
                     type: "GET",
                     success: function(response) {
                         console.log(response);
+                        $('#powerModal').modal();
+                        $('#annualPower').text(response['power_value']);
+                        $('#area').text(response['area']);
                     },
                     error: function(xhr) {
                 
