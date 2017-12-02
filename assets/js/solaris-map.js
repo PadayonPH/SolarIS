@@ -131,18 +131,18 @@ L.easyButton({
                 var get_data = {"house_footprint": JSON.stringify(geojson_tmpl)}
                 $.ajax({
                     url: "http://api.solar.padayon.ph/compute/",
-                    // url: "http://127.0.0.1:8888/compute/",                    
+                    // url: "http://127.0.0.1:8888/compute/",
                     data: get_data,
                     cache: false,
                     type: "GET",
                     success: function(response) {
                         console.log(response);
                         $('#powerModal').modal();
-                        $('#annualPower').text(response['power_value']);
-                        $('#area').text(response['area']);
+                        $('#annualPower').text((response['power_value']/1000).toFixed(3));
+                        $('#area').text(response['area'].toFixed(2));
                     },
                     error: function(xhr) {
-                
+
                     }
                 });
             }
