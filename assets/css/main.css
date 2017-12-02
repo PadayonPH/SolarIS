@@ -6,15 +6,46 @@
   width: 100%;
 }
 
-
-.geocoder-control{
-	position: fixed;
-	top: 0.25%;
-	right: 40%;
-	float: clear;
-	width:400px;
-}
-
 .easy-button-button{
 	padding:0px;
+}
+
+.sun-data{
+	padding: 2%;
+	padding-top: 1%;
+}
+
+
+
+@media only screen and (min-width: 500px) {
+	.geocoder-control{
+		position: fixed;
+		top: 0.25%;
+		right: 40%;
+		float: clear;
+		width:400px;
+	}
+}
+
+@media (max-width: 670px) and (min-width: 500px) {
+	.geocoder-control{
+		position: fixed;
+		top: 0.25%;
+		right: 35%;
+		float: clear;
+		width:230px;
+	}
+}
+
+
+
+
+@media (max-width: 782px) and (min-width: 670px) {
+	.geocoder-control{
+		position: fixed;
+		top: 0.25%;
+		right: 30%;
+		float: clear;
+		width:400px;
+	}
 }

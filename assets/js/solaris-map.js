@@ -38,6 +38,9 @@ var map = L.map('map', {
     layers: [google, solar_ann, drawn_feature]
 });
 
+L.control.layers(basemaps, overlaymaps, {collapsed: false}).addTo(map);
+L.control.scale({position:'bottomright', maxWidth:100}).addTo(map);
+
 // GEOCODE SEARCH
 var arcgisOnline = L.esri.Geocoding.arcgisOnlineProvider({
     countries: 'PHL'
@@ -62,9 +65,6 @@ searchControl.on('results', function(data){
     results.clearLayers();
 });
 
-
-L.control.layers(basemaps, overlaymaps, {collapsed: false}).addTo(map);
-L.control.scale({position:'bottomright', maxWidth:100}).addTo(map);
 
 // SIDEBAR
 // var sidebar = L.control.sidebar('sidebar').addTo(map);

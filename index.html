@@ -83,15 +83,32 @@
     <div class="modal fade" id="powerModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel"><strong>Power Savings</strong></h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
+<div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Check this out!</h4>
+      </div>
             <div class="modal-body">
-              <p><strong>Annual Average GHI: <span id="annualPower"></span> kWh/m<sup>2</sup>-day</strong></p>
-              <p><strong>Area: <span id="area"></span> <sup>2</sup></strong></p>
+                <ul class="nav nav-pills">
+                  <li role="presentation" class="active"><a href="#1a" data-toggle="tab">Savings & Carbon</a></li>
+                  <li role="presentation"><a href="#2a" data-toggle="tab">GHI</a></li>
+                </ul>
+
+                <div class="tab-content clearfix">
+              <div class="tab-pane active sun-data" id="1a">
+                <!-- <div class="well"> -->
+                        <h3><b>Annual Average GHI: </b><span id="annualPower"></span> kWh/m<sup>2</sup>-day</h3>
+              <h3><b>Orthogonal Area: </b><span id="area"></span> <sup>2</sup></h3>
+              <!-- </div> -->
+                </div>
+                <div class="tab-pane sun-data" id="2a">
+                    <!-- <div class="well"> -->
+          <h3>We use the class nav-pills instead of nav-tabs which automatically creates a background color for the tab</h3>
+      <!-- </div> -->
+                </div>
+            </div>
+            </div>
+
+
             </div>
             <!-- <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
