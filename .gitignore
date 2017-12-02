@@ -1,6 +1,8 @@
 _site
 Gemfile
 Gemfile.lock
+CNAME
+
 .pyc
 *.sqlite3
 api/env/
