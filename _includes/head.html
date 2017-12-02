@@ -6,11 +6,11 @@
     <!-- <link rel="image_src" href="media/logo.png" /> -->
     <!-- OG meta -->
 
-    <meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}" />
+    <!-- <meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}" /> -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="SolarIS">
     <meta property="og:description" content="Solar Energy For Everyone">
-    <meta property="og:image" content="{{ site.logo | prepend: site.baseurl | prepend: site.url }}"/>
+    <meta property="og:image" content="{{ site.logo | relative_url }}"/>
 
     <!-- Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css">
@@ -69,7 +69,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="{{ "/assets/css/main.css" | prepend: site.url }}" rel="stylesheet">
+    <link href="{{ "/assets/css/main.css" | relative_url }}" rel="stylesheet">
 
     <!-- jQuery -->
     <!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script> -->
