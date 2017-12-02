@@ -3,14 +3,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SolarIS</title>
-    <!-- <link rel="image_src" href="media/logo.png" /> -->
+    <link rel="image_src" href="favicon.ico" />
     <!-- OG meta -->
 
     <!-- <meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}" /> -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="SolarIS">
     <meta property="og:description" content="Solar Energy For Everyone">
-    <meta property="og:image" content="{{ site.logo | relative_url }}"/>
+    <meta property="og:image" content="{{ site.logo | absolute_url }}"/>
+    <!-- <meta property="og:image" content=""/> -->
 
     <!-- Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css">
@@ -69,7 +70,9 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="{{ "/assets/css/main.css" | relative_url }}" rel="stylesheet">
+    <!-- <link href="{{ "/assets/css/main.css" | relative_url }}" rel="stylesheet"> -->
+    <link href="{{ "/assets/css/main.css" | absolute_url }}" rel="stylesheet">
+    <!-- <link href="https://raw.githubusercontent.com/PadayonPH/SolarIS/gh-pages/assets/css/main.css" rel="stylesheet"> -->
 
     <!-- jQuery -->
     <!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script> -->
