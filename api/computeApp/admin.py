@@ -1,3 +1,9 @@
 from django.contrib import admin
+from computeApp import models
 
-# Register your models here.
+
+class DevicesAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name']
+
+
+admin.site.register(models.Devices, DevicesAdmin)
