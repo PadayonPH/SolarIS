@@ -1,5 +1,6 @@
 _site
 Gemfile
 Gemfile.lock
-*.pyc
+.pyc
 *.sqlite3
+api/env/
