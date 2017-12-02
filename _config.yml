@@ -1,9 +1,6 @@
 # Site Settings
-title: bnhr
-description: FOSS, Geospatial, Python, Basketball, and Everything in Between
-author:
-  facebook: benhur07b
-  twitter: benhur07b
+title: SolarIS
+description: Solar Energy For Everyone
 baseurl: ""
 logo: /media/logo.png
 
