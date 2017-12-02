@@ -23,14 +23,18 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css">
     <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
     <!-- <link rel="stylesheet" href="assets/leaflet/leaflet.css"> -->
-    <link rel="stylesheet" href="assets/L.Control.ZoomBar/L.Control.ZoomBar.css">
+    <link rel="stylesheet" href="assets/L.Control.ZoomBox/L.Control.ZoomBox.css">
     <!-- <script src="assets/leaflet/leaflet.js"></script> -->
-    <script src="assets/L.Control.ZoomBar/L.Control.ZoomBar.js"></script>
+    <script src="assets/L.Control.ZoomBox/L.Control.ZoomBox.js"></script>
     <script src="https://unpkg.com/esri-leaflet@2.1.1/dist/esri-leaflet.js"></script>
 
+    <!-- Leaflet EasyButton -->
+    <link rel="stylesheet" href="assets/css/easy-button.css">
+    <script src="assets/js/easy-button.js"></script>
+
     <!-- Leaflet Draw -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.13/leaflet.draw.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.13/leaflet.draw.js"></script>
 
     <!-- Bootstrap Core and JQuery -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
@@ -64,16 +68,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.1.1/css/mdb.min.css" />
 
     <!-- Leaflet Sidebar v2 -->
-    <!-- <link rel="stylesheet" href="/static/assets/css/leaflet-sidebar.css">
-    <script src="/static/assets/js/leaflet-sidebar.min.js"></script> -->
-
-    <!-- Leaflet GroupedLayers -->
-    <!-- <link rel="stylesheet" href="/static/assets/css/leaflet.groupedlayercontrol.css">
-    <script src="/static/assets/js/leaflet.groupedlayercontrol.js"></script> -->
-
-    <!-- L.Control.Layers.Tree -->
-    <!-- <link rel="stylesheet" href="/static/assets/css/L.Control.Layers.Tree.css">
-    <script src="/static/assets/js/L.Control.Layers.Tree.js"></script> -->
+    <link rel="stylesheet" href="assets/css/leaflet-sidebar.css">
+    <script src="assets/js/leaflet-sidebar.js"></script>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700" rel="stylesheet">
@@ -86,12 +82,36 @@
 
     <!-- jQuery -->
     <!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script> -->
-
-
-
 </head>
 
 <body>
+    <!-- <div id="sidebar" class="sidebar collapsed">
+        <div class="sidebar-tabs">
+            <ul role="tablist">
+                <li><a href="#home-pane" role="tab" title="What is GoSOLAR?"><i class="fa fa-sun-o"></i></a></li>
+                <li><a href="#solar-pane" role="tab" title="Why GoSOLAR?"><i class="fa fa-bolt"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-content">
+            <div class="sidebar-pane" id="home-pane">
+                <h1 class="sidebar-header">
+                    <strong>What is GoSOLAR?</strong>
+                    <span class="sidebar-close"><i class="fa fa-chevron-circle-left"></i></span>
+                </h1>
+                <p><br>GoSOLAR is ...</p>
+            </div>
+
+            <div class="sidebar-pane" id="solar-pane">
+                <h1 class="sidebar-header">
+                    <strong>Why GoSOLAR?</strong>
+                    <span class="sidebar-close"><i class="fa fa-chevron-circle-left"></i></span>
+                </h1>
+                <p><br>...</p>
+            </div>
+        </div>
+    </div> -->
+
     <div id="map"></div>
 
     <script src="assets/js/solaris-map.js"></script>
