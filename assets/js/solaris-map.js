@@ -99,10 +99,10 @@ var draw_control = new L.Control.Draw({
             showArea: true,
              shapeOptions: {
                     clickable: false,
-                    color:"#2196F3",
+                    color:"#00ACC1",
                     weight:1,
                     opacity: 1,
-                    fillColor:"#FFEE58",
+                    fillColor:"#00ACC1",
                     fillOpacity:0.4,
                     dashArray:"3,3"
                 }
