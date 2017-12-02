@@ -11,7 +11,7 @@ var google = L.tileLayer('http://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y=
 
 var solar_ann = L.tileLayer('http://api.solar.padayon.ph/tiles/{z}/{x}/{y}.png', {
     attribution: 'REMap-SOLAR',
-    opacity: 0.75,
+    opacity: 0.65,
     tms: true
 });
 

@@ -1,6 +1,10 @@
 _site
 Gemfile
 Gemfile.lock
+_includes
+_layouts
+_config.yml
+
 CNAME
 
 .pyc

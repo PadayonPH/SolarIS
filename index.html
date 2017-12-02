@@ -1,6 +1,97 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
 
-<!-- MAP -->
-<div id="map"></div>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SolarIS</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png" >
+    <!-- <link rel="image_src" href="{{ favicon.ico | absolute_url }}" /> -->
+    <!-- <link rel="shortcut icon" type="image/png" href="/favicon.png" >
+    <link rel="shortcut icon" type="image/png" href="/favicon.png" > -->
+    <!-- OG meta -->
+
+    <!-- <meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}" /> -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SolarIS">
+    <meta property="og:description" content="Solar Energy For Everyone">
+    <meta property="og:image" content="/media/logo.png"/>
+    <!-- <meta property="og:image" content=""/> -->
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/esri-leaflet@2.1.1/dist/esri-leaflet.js"></script>
+
+    <!-- Leaflet Draw -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.js"></script>
+
+    <!-- Bootstrap Core and JQuery -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script  src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous">
+    </script>
+
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <!-- <script src="/static/ChartJS/pieceLabel.js"></script> -->
+
+    <!-- Vector Grid -->
+    <!-- <script src="https://unpkg.com/leaflet.vectorgrid@latest/dist/Leaflet.VectorGrid.bundled.js"></script>
+    <script src="https://unpkg.com/leaflet.vectorgrid@latest/dist/Leaflet.VectorGrid.js"></script>
+    <script src="https://unpkg.com/leaflet.vectorgrid@1.2.0"></script> -->
+
+    <!-- ESRI Leaflet Geocoder -->
+    <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.6/dist/esri-leaflet-geocoder.css">
+    <script src="https://unpkg.com/esri-leaflet-geocoder@2.2.6/dist/esri-leaflet-geocoder-debug.js"></script>
+
+    <!-- Normalize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+    <!-- MDBootstap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.1.1/css/mdb.min.css" />
+
+    <!-- Leaflet Sidebar v2 -->
+    <!-- <link rel="stylesheet" href="/static/assets/css/leaflet-sidebar.css">
+    <script src="/static/assets/js/leaflet-sidebar.min.js"></script> -->
+
+    <!-- Leaflet GroupedLayers -->
+    <!-- <link rel="stylesheet" href="/static/assets/css/leaflet.groupedlayercontrol.css">
+    <script src="/static/assets/js/leaflet.groupedlayercontrol.js"></script> -->
+
+    <!-- L.Control.Layers.Tree -->
+    <!-- <link rel="stylesheet" href="/static/assets/css/L.Control.Layers.Tree.css">
+    <script src="/static/assets/js/L.Control.Layers.Tree.js"></script> -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <!-- <link href="{{ "/assets/css/main.css" | relative_url }}" rel="stylesheet"> -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    <!-- <link href="https://raw.githubusercontent.com/PadayonPH/SolarIS/gh-pages/assets/css/main.css" rel="stylesheet"> -->
+
+    <!-- jQuery -->
+    <!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script> -->
+
+
+
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <script src="assets/js/solaris-map.js"></script>
+
+</body>
+
+</html>
