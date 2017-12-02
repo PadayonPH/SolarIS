@@ -1,14 +1,17 @@
 from rest_framework.views import APIView
 from rest_framework import response
+from rest_framework import viewsets
 from area import area
 import numpy as np
 import os
 import operator
 import json
+from computeApp.serializers import DeviceSerializer
+from .models import Devices
+
 
 
 class ComputePower(APIView):
-
     def get(self, request, format=None):
         try:
             footprint = json.loads(request.data['house_footprint'])
@@ -44,4 +47,8 @@ def extract_area_power(footprint):
     return (sum(pixel_value)/len(pixel_value), footprint_area)
 
 
+
+class DevicesViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Devices.objects.all()
+    serializer_class = DeviceSerializer
 
