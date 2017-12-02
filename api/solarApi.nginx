@@ -1,0 +1,30 @@
+upstream django {
+    server unix:///tmp/solarApi.sock;
+}
+
+server {
+    client_body_in_file_only clean;
+    client_body_buffer_size 32K;
+    client_max_body_size 1500M;
+
+    sendfile on;
+    send_timeout 3600s;
+
+    listen      80 default_server;
+    listen [::]:80 default_server;
+
+    # server_name .example.org;
+    charset     utf-8;
+
+
+    location /static {
+        add_header X-Frame-Options SAMEORIGIN;
+        alias /tmp/static;
+    }
+
+    location / {
+        uwsgi_pass  django;
+        include     uwsgi_params;
+        uwsgi_ignore_client_abort on;
+    }
+}
