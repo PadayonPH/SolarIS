@@ -238,7 +238,7 @@ function build_devices(footprint_area, ghi){
 
 function compute_savings(footprint_area, panel_area, panel_eff, ghi, price){
     var no_panels = Math.floor(footprint_area / panel_area);
-    var monthly_power = footprint_area * 0.7 * ghi / 1000 * panel_eff * 30;
+    var monthly_power = footprint_area * 0.5 * ghi / 1000 * panel_eff * 30;
     var savings =  monthly_power * 8;
     $("#energy").text(monthly_power.toFixed(0));
     $("#savings").text(savings.toFixed(2));
