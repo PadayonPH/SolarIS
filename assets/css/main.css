@@ -1,3 +1,16 @@
+.panel {
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid transparent;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    border-radius: 48px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
 #map {
   position: absolute;
   top: 0;
@@ -52,9 +65,9 @@
     border-radius: 2px;
     }
 
-#name_container{
-	width:300px;
-}
+// #name_container{
+// 	width:300px;
+// }
 
 #name_container .panel .panel-default{
 	border-radius: 0px;
@@ -71,7 +84,7 @@
 }
 
 #logo-btn-container{
-	width:30%;
+	width:27%;
 	float:left;
 }
 
@@ -81,6 +94,6 @@
 }
 
 .logo-btn {
-	max-width: 24px;
+	max-width: 60px;
  }
 

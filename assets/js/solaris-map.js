@@ -199,7 +199,7 @@ name_container.onAdd = function(map) {
     var container = L.DomUtil.create('div', 'name_container');
     container.id="name_container";
 
-    container.innerHTML = '<div class="panel panel-default"><div class="panel-body"><div id="logo-btn-container"><img class="img-responsive logo-btn" src="media/logo.png"></div> <div id="name-text-container"><h3>GoSOLAR</h3></div></div></div>';
+    container.innerHTML = '<div class="panel panel-default"><div class="panel-body"><div id="logo-btn-container"><img class="img-responsive logo-btn" src="media/logo.png"></div></div></div>';
 
     L.DomEvent.on(container, 'mouseover', function (ev) {
        map.dragging.disable();
