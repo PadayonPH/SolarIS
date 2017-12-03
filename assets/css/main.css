@@ -15,8 +15,6 @@
 	padding-top: 1%;
 }
 
-
-
 @media only screen and (min-width: 500px) {
 	.geocoder-control{
 		position: fixed;
@@ -37,9 +35,6 @@
 	}
 }
 
-
-
-
 @media (max-width: 782px) and (min-width: 670px) {
 	.geocoder-control{
 		position: fixed;
@@ -49,3 +44,9 @@
 		width:400px;
 	}
 }
+
+.leaflet-popup-content-wrapper {
+    padding: 1px;
+    text-align: left;
+    border-radius: 2px;
+    }

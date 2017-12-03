@@ -130,7 +130,10 @@ map.on(L.Draw.Event.CREATED, function (event) {
     var content = getPopupContent(layer);
     if (content != null) {
         layer.bindPopup(content);
+        // layer.openPopup();
     }
+
+
 
     drawn_feature.addLayer(layer);
 });
