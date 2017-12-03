@@ -6,19 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GoSOLAR - Solar Energy For EveryJUAN</title>
-    <link rel="shortcut icon" type="image/png" href="favicon.png" >
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
     <!-- <link rel="image_src" href="{{ favicon.ico | absolute_url }}" /> -->
     <!-- <link rel="shortcut icon" type="image/png" href="/favicon.png" >
     <link rel="shortcut icon" type="image/png" href="/favicon.png" > -->
     <!-- OG meta -->
-
     <!-- <meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}" /> -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="GoSOLAR">
     <meta property="og:description" content="Solar Energy For EveryJUAN">
-    <meta property="og:image" content="/media/logo.png"/>
+    <meta property="og:image" content="/media/logo.png" />
     <!-- <meta property="og:image" content=""/> -->
-
     <!-- Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css">
     <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
@@ -27,76 +25,60 @@
     <!-- <script src="assets/leaflet/leaflet.js"></script> -->
     <script src="assets/L.Control.ZoomBox/L.Control.ZoomBox.js"></script>
     <script src="https://unpkg.com/esri-leaflet@2.1.1/dist/esri-leaflet.js"></script>
-
     <!-- Leaflet EasyButton -->
     <link rel="stylesheet" href="assets/css/easy-button.css">
     <script src="assets/js/easy-button.js"></script>
-
     <!-- Leaflet Draw -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.13/leaflet.draw.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.13/leaflet.draw.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.13/leaflet.draw.js"></script>
-
     <!-- Bootstrap Core and JQuery -->
-    <script  src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
     </script>
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
     <!-- Chart.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
-
     <!-- ESRI Leaflet Geocoder -->
     <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.6/dist/esri-leaflet-geocoder.css">
     <script src="https://unpkg.com/esri-leaflet-geocoder@2.2.6/dist/esri-leaflet-geocoder-debug.js"></script>
-
     <!-- Normalize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
-
     <!-- MDBootstap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.1.1/css/mdb.min.css" />
-
     <!-- Leaflet Sidebar v2 -->
     <link rel="stylesheet" href="assets/css/leaflet-sidebar.css">
     <script src="assets/js/leaflet-sidebar.js"></script>
-
     <!-- Google Fonts -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet"> -->
-
     <!-- Custom CSS -->
     <!-- <link href="{{ "/assets/css/main.css" | relative_url }}" rel="stylesheet"> -->
     <link href="assets/css/main.css" rel="stylesheet">
-
 </head>
 
 <body>
     <div id="map"></div>
-
     <!--Data Modal-->
     <div class="modal fade" id="powerModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <!-- <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel"><strong>Power Savings</strong></h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div> -->
-            <div class="modal-body">
-              <p><strong>Annual Average GHI: <span id="annualPower"></span> kWh/m<sup>2</sup>-day</strong></p>
-              <p><strong>Area: <span id="area"></span> m<sup>2</sup></strong></p>
-              <p><strong>Savings (kWh): <span id="energy"></span> kWh/month </strong></p>
-              <p><strong>Savings (Php): <span id="savings"></span> /month </strong></p>                                                        
-              <p><strong>Cost of the System (Php): <span id="system_cost"></span> </strong></p>                                                                      
-              <br />
-              <p id="device_container"><strong>Devices: </p>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Check this out!</h4>
+                </div>
+                <div class="modal-body">
+                    <p><h4>Annual Average GHI: <b><span id="annualPower"></span> kWh/m<sup>2</sup>-day</b></h4></p>
+                    <p><h4>Selected Area: <b><span id="area"></span> m<sup>2</sup></b></h4></p>
+                    <p><h4>Savings in kWh: <b><span id="energy"></span> kWh/month </b></h4></p>
+                    <p><h4>Financial savings: <b><span id="savings"></span> /month </b></h4></p>
+                    <p><h4>System Investment (Php): <b><span id="system_cost"></span> </b></h4></p>
+            
+                    <hr>
+                    <h4>Available Devices: </h4>
+                    <div id="device_container"></div>
 
               </div>
 

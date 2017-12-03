@@ -52,6 +52,34 @@
     border-radius: 2px;
     }
 
+#name_container{
+	width:300px;
+}
+
+#name_container .panel .panel-default{
+	border-radius: 0px;
+	color:white !important;
+	background-color:rgba(0, 0, 0, 0.3) !important;
+	border-color:rgba(0, 0, 0, 0.3) !important;
+}
+
+.panel .panel-default{
+	border-radius: 0px;
+	color:white !important;
+	background-color:rgba(0, 0, 0, 0.3) !important;
+	border-color:rgba(0, 0, 0, 0.3) !important;
+}
+
+#logo-btn-container{
+	width:30%;
+	float:left;
+}
+
+#name-text-container{
+	width:70%;
+	float:left;
+}
+
 .logo-btn {
 	max-width: 24px;
  }
