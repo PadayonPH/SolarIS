@@ -45,8 +45,14 @@
 	}
 }
 
+
 .leaflet-popup-content-wrapper {
     padding: 1px;
     text-align: left;
     border-radius: 2px;
     }
+
+.logo-btn {
+	max-width: 24px;
+ }
+
