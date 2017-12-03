@@ -161,19 +161,17 @@ L.easyButton({
                 geojson_tmpl['features'] = [];
                 var coords = drawn_features[0].toGeoJSON()['geometry']['coordinates'][0];
                 geojson_tmpl['features'].push(drawn_features[0].toGeoJSON());
-                // console.log(geojson_tmpl);
                 var get_data = {"house_footprint": JSON.stringify(geojson_tmpl)}
                 $.ajax({
                     url: "http://api.solar.padayon.ph/compute/",
-                    // url: "http://127.0.0.1:8888/compute/",
                     data: get_data,
                     cache: false,
                     type: "GET",
                     success: function(response) {
-                        console.log(response);
                         $('#powerModal').modal();
                         $('#annualPower').text((response['power_value']/1000).toFixed(3));
                         $('#area').text(response['area'].toFixed(2));
+                        build_devices(response['area'].toFixed(2), response['power_value']);
                     },
                     error: function(xhr) {
 
@@ -213,3 +211,40 @@ name_container.onAdd = function(map) {
 
 name_container.setPosition('bottomleft');
 name_container.addTo(map);
+
+
+function build_devices(footprint_area, ghi){
+    $.ajax({
+        url: "http://api.solar.padayon.ph/devices/",
+        cache: false,
+        type: "GET",
+        success: function(response) {
+            for(var i=0; i<response.length; i++){
+                if(i==0){
+                    $("#device_container").append('<label class="checkbox-inline"><input type="checkbox"  checked="checked" value="'+response[i].package_name+'">'+response[i].package_name+'<br />').fadeIn('slow');
+                    var panel_area = response[i].length * response[i].width;
+                    compute_savings(footprint_area, panel_area, response[i].efficiency, ghi, response[i].price)
+                }else{
+                    $("#device_container").append('<label class="checkbox-inline"><input type="checkbox" value="'+response[i].package_name+'">'+response[i].package_name+'<br />').fadeIn('slow');                    
+                }
+            }
+
+        },
+        error: function(xhr) {
+
+        }
+    });
+}
+
+function compute_savings(footprint_area, panel_area, panel_eff, ghi, price){
+    var no_panels = Math.floor(footprint_area / panel_area);
+    var monthly_power = footprint_area * 0.7 * ghi / 1000 * panel_eff * 30;
+    var savings =  monthly_power * 8;
+    $("#energy").text(monthly_power.toFixed(0));
+    $("#savings").text(savings.toFixed(2));
+    var system_cost = no_panels * price
+    $("#system_cost").text(system_cost)
+    
+    return savings
+
+}
